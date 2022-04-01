@@ -89,9 +89,9 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  background-color: #f1e5e5;
+  background-color: #777777;
   width: 100%;
-  padding: 1rem;
+  padding: 0.3rem;
   z-index: 20;
 }
 
@@ -110,19 +110,19 @@ body {
 }
 
 .toolbar .color-fileds .color-filed-1 {
-  background-color: aqua;
+  background-color: #15f8f8;
 }
 
 .toolbar .color-fileds .color-filed-2 {
-  background-color: #5247ee;
+  background-color: #1505fd;
 }
 
 .toolbar .color-fileds .color-filed-3 {
-  background-color: #cfe263;
+  background-color: #d9ff00;
 }
 
 .toolbar .color-fileds .color-filed-4 {
-  background-color: #e253ca;
+  background-color: #ff00d4;
 }
 
 .toolbar > * {
