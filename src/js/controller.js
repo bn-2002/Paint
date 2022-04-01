@@ -1,15 +1,18 @@
 const canvas = document.getElementById("canvas");
-console.log(canvas);
+const colorFields = document.querySelectorAll(".color-field");
+const penRange = document.querySelector(".pen-range");
+const colorPicker = document.querySelector(".color-picker");
+const clearBtn = document.querySelector(".clear-btn");
+const undoBtn = document.querySelector(".undo-btn");
 
 canvas.width = window.innerWidth;
 canvas.height = 800;
-
 let context = canvas.getContext("2d");
 let startBackgroundColor = "white";
 context.fillStyle = startBackgroundColor;
 context.fillRect(0, 0, canvas.width, canvas.height);
-
 let drawColor = "black";
+let defaultColor = "#145539";
 let drawWidth = "2";
 let isDrawing = false;
 let restoreArray = [];
@@ -45,54 +48,21 @@ const stop = function(e) {
     restoreArray.push(context.getImageData(0,0,canvas.width,canvas.height));
     index += 1;
   }
-  console.log(restoreArray);
 }
-
-canvas.addEventListener("touchstart",start,false);
-canvas.addEventListener("touchmove",draw,false);
-canvas.addEventListener("mousedown",start,false);
-canvas.addEventListener("mousemove",draw,false);
-
-canvas.addEventListener("touchend",stop,false);
-canvas.addEventListener("mouseup",stop,false);
-canvas.addEventListener("mouseout",stop,false);
-
-
-const colorFileds = document.querySelectorAll(".color-filed");
-
-colorFileds.forEach((colorField) => {
-  colorField.addEventListener("click", function () {
-    changeLinecolor(colorField.style.backgroundColor);
-  });
-});
 
 const changeLinecolor = function (color) {
   drawColor = color;
 };
 
-const penRange = document.querySelector(".pen-range");
-
-const colorPicker = document.querySelector(".color-picker");
-
-let defaultColor = "#145539";
-
-window.addEventListener("load", startup, false);
-
-function startup() {
-  colorPicker.value = defaultColor;
-  colorPicker.addEventListener("change", updateColors, false);
-  colorPicker.select();
-  penRange.addEventListener("input", updateStroke, false);
-}
-
 const updateColors = function (e) {
+  //change pen color
   defaultColor = e.target.value;
   changeLinecolor(defaultColor);
-  colorFileds.forEach((colorField) => {
+
+  //change color fields
+  colorFields.forEach((colorField) => {
     if (colorField.nextElementSibling) {
-      console.log(colorField);
-      colorField.style.backgroundColor =
-        colorField.nextElementSibling.style.backgroundColor;
+      colorField.style.backgroundColor = colorField.nextElementSibling.style.backgroundColor;
     } else {
       colorField.style.backgroundColor = e.target.value;
     }
@@ -103,19 +73,33 @@ const updateStroke = function () {
   drawWidth = penRange.value;
 };
 
-const clearBtn = document.querySelector(".clear-btn");
-
 const clearCanvas = function () {
   context.fillStyle = startBackgroundColor;
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.clearRect(0,0,canvas.width,canvas.height);
+  context.fillRect(0,0,canvas.width,canvas.height);
+
+  //Reset restore Array
   restoreArray = [];
   index = -1;
 };
 
-clearBtn.addEventListener("click", clearCanvas);
+const startup = function() {
+  //change color picker color => change pen color 
+  colorPicker.value = defaultColor;
+  colorPicker.addEventListener("change", updateColors, false);
+  colorPicker.select();
 
-const undoBtn = document.querySelector(".undo-btn");
+  //handle pen rage to set stroke
+  penRange.addEventListener("input", updateStroke, false);
+
+  //change color fields according to color picker
+  colorFields.forEach((colorField) => {
+    colorField.addEventListener("click", function () {
+      changeLinecolor(colorField.style.backgroundColor);
+    });
+  });  
+
+}
 
 const undoLast = function () {
   if (index <= 0) {
@@ -123,11 +107,29 @@ const undoLast = function () {
   } else {
     index -= 1;
     restoreArray.pop();
-    console.log(restoreArray[index]);
     context.putImageData(restoreArray[index],0,0);
   }
 };
 
+const controllMouseEvents = function() {
+  canvas.addEventListener("touchstart",start,false);
+  canvas.addEventListener("touchmove",draw,false);
+  canvas.addEventListener("mousedown",start,false);
+  canvas.addEventListener("mousemove",draw,false);
+  canvas.addEventListener("touchend",stop,false);
+  canvas.addEventListener("mouseup",stop,false);
+  canvas.addEventListener("mouseout",stop,false);
+}
 
-undoBtn.addEventListener("click", undoLast);
+const controllButtons = function() {
+  clearBtn.addEventListener("click",clearCanvas);
+  undoBtn.addEventListener("click",undoLast);  
+}
 
+const init = function() {
+  window.addEventListener("load",startup,false);
+  controllMouseEvents();
+  controllButtons();
+}
+
+init();

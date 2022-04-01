@@ -95,13 +95,13 @@ body {
   z-index: 20;
 }
 
-.toolbar .color-fileds {
+.toolbar .color-fields {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.toolbar .color-fileds .color-filed {
+.toolbar .color-fields .color-field {
   border-radius: 50%;
   width: 1.6rem;
   height: 1.6rem;
@@ -109,7 +109,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
 }
 
-.toolbar .color-fileds > * {
+.toolbar .color-fields > * {
   cursor: pointer;
 }
 
@@ -117,13 +117,14 @@ body {
   cursor: pointer;
 }
 
-.toolbar > * {
-  margin: .5rem;
+.toolbar .color-picker {
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
 }
 
-#id {
-  width: 4rem;
-  height: 3rem;
+.toolbar > * {
+  margin: .5rem;
 }
 
 .btn {

@@ -6,9 +6,9 @@
     padding:0.3rem;
     z-index:20;
 
-    .color-fileds {
+    .color-fields {
         @include flex;
-        .color-filed {
+        .color-field {
             border-radius: 50%;
             width:1.6rem;
             height:1.6rem;
@@ -24,14 +24,13 @@
         cursor: pointer;
     }
 
+    .color-picker {
+        border:none;
+        outline:none;
+        border-radius: 0.2rem;
+    }
+
     &>* {
         margin:.5rem;
     }
-}
-
-
-
-#id {
-    width:4rem;
-    height:3rem;
 }
