@@ -89,7 +89,7 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  background-color: #777777;
+  background-color: #494747;
   width: 100%;
   padding: 0.3rem;
   z-index: 20;
@@ -125,6 +125,14 @@ body {
   background-color: #ff00d4;
 }
 
+.toolbar .color-fileds > * {
+  cursor: pointer;
+}
+
+.toolbar .color-picker, .toolbar .range-tool {
+  cursor: pointer;
+}
+
 .toolbar > * {
   margin: .5rem;
 }
@@ -145,7 +153,5 @@ body {
 #canvas {
   position: relative;
   cursor: pointer;
-  width: 100%;
-  height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */

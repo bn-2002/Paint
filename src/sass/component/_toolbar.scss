@@ -1,7 +1,7 @@
 .toolbar {
     @include flex;
     position: absolute;
-    background-color:rgb(119, 119, 119);
+    background-color:rgb(73, 71, 71);
     width:100%;
     padding:0.3rem;
     z-index:20;
@@ -31,6 +31,14 @@
         .color-filed-4{
             background-color: rgb(255, 0, 212);
         }
+
+        &>* {
+            cursor: pointer;
+        }
+    }
+
+    .color-picker,.range-tool {
+        cursor: pointer;
     }
 
     &>* {
