@@ -1,0 +1,26 @@
+{
+  "name": "paint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "parcel": "^2.4.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.4.1"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bn-2002/Paint.git"
+  },
+  "author": "bahareni1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bn-2002/Paint/issues"
+  },
+  "homepage": "https://github.com/bn-2002/Paint#readme"
+}
