@@ -109,22 +109,6 @@ body {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
 }
 
-.toolbar .color-fileds .color-filed-1 {
-  background-color: #15f8f8;
-}
-
-.toolbar .color-fileds .color-filed-2 {
-  background-color: #1505fd;
-}
-
-.toolbar .color-fileds .color-filed-3 {
-  background-color: #d9ff00;
-}
-
-.toolbar .color-fileds .color-filed-4 {
-  background-color: #ff00d4;
-}
-
 .toolbar .color-fileds > * {
   cursor: pointer;
 }
@@ -135,6 +119,11 @@ body {
 
 .toolbar > * {
   margin: .5rem;
+}
+
+#id {
+  width: 4rem;
+  height: 3rem;
 }
 
 .btn {

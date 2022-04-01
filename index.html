@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="src/sass/main.scss" /> -->
     <link rel="stylesheet" href="./css/main.css" />
     <script defer type="module" src="src/js/controller.js"></script>
-    <link rel="icon" type="image/x-icon" href="./src/images/favicon.png"/>
+    <link rel="icon" type="image/x-icon" href="./src/images/favicon.png" />
     <title>Paint</title>
-</head>
-<body>
-   <div class="container">
-       <div class="toolbar">
+  </head>
+  <body>
+    <div class="container">
+      <div class="toolbar">
         <button class="btn undo-btn">undo</button>
         <button class="btn clear-btn">clear</button>
         <div class="color-fileds">
-            <div class="color-filed color-filed-1"></div>
-            <div class="color-filed color-filed-2"></div>
-            <div class="color-filed color-filed-3"></div>
-            <div class="color-filed color-filed-4"></div>
+          <div class="color-filed color-filed-1" style ="background-color: rgb(243, 24, 24)"></div>
+          <div class="color-filed color-filed-2" style ="background-color: rgb(241, 102, 241)"></div>
+          <div class="color-filed color-filed-3" style ="background-color: rgb(234, 255, 143)"></div>
+          <div class="color-filed color-filed-4" style ="background-color: #145539"></div>
         </div>
-        <input type="color" class="color-picker">
-        <input type="range" class="range-tool">
-       </div>
-       <canvas id="canvas"></canvas>
-   </div>
-</body>
+        <input type="color" class="color-picker" />
+        <input type="range" min="1" max="100" class="pen-range" />
+
+        <div id="id">salam bahare</div>
+      </div>
+      <canvas id="canvas"></canvas>
+    </div>
+  </body>
 </html>

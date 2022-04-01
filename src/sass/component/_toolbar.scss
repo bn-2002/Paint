@@ -15,23 +15,6 @@
             margin:0 0.2rem;
             box-shadow: $box-shadow3;
         }
-
-        .color-filed-1 {
-            background-color: rgb(21, 248, 248);
-        }
-
-        .color-filed-2{
-            background-color: rgb(21, 5, 253);
-        }
-
-        .color-filed-3{
-            background-color: rgb(217, 255, 0);
-        }
-
-        .color-filed-4{
-            background-color: rgb(255, 0, 212);
-        }
-
         &>* {
             cursor: pointer;
         }
@@ -46,3 +29,9 @@
     }
 }
 
+
+
+#id {
+    width:4rem;
+    height:3rem;
+}
