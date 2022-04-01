@@ -61,25 +61,24 @@ const changeLinecolor = function (color) {
   drawColor = color;
 };
 
-let colorPicker = document.querySelector('.color-picker');
+const penRange = document.querySelector('.pen-range');
+
+const colorPicker = document.querySelector('.color-picker');
 
 let defaultColor = '#145539';
 
 window.addEventListener("load", startup, false);
+
 function startup() {
   colorPicker.value = defaultColor;
-  colorPicker.addEventListener("change", updateAll, false);
+  colorPicker.addEventListener("change", updateColors, false);
   colorPicker.select();
+  penRange.addEventListener('input',updateStroke ,false);
 }
 
-
-const updateAll = function(e) {
-
+const updateColors = function(e) {
   defaultColor = e.target.value;
-
   changeLinecolor(defaultColor);
-
-
   colorFileds.forEach((colorField) => {
     if (colorField.nextElementSibling) {
       console.log(colorField);
@@ -90,3 +89,10 @@ const updateAll = function(e) {
   });
 }
 
+const updateStroke = function() {
+  drawWidth  = penRange.value;
+}
+
+
+//20:28
+//https://www.youtube.com/watch?v=wCwKkT1P7vY
