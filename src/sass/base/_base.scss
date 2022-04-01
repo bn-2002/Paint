@@ -50,13 +50,9 @@ html {
         @include respond(phone) {
             font-size: 60%;
         }
-
-    
 }
 
-
 .container {
-    background-color: red;
     width:100%;
     height:100%;
 }

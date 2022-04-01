@@ -1,0 +1,12 @@
+.btn {
+    padding:.5rem;
+    border-radius: .5rem;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    box-shadow: $box-shadow1; 
+    
+    &:hover {
+        box-shadow:$box-shadow2;
+    }
+ }
