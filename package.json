@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "common-js": "^0.3.8",
+    "konva": "^8.3.5",
     "parcel": "^2.4.1"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.4.1",
-    "el-select": "^1.0.1"
+    "@parcel/transformer-sass": "^2.4.1"
   },
   "scripts": {
     "start": "parcel index.html",
