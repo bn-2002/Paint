@@ -127,6 +127,14 @@ body {
   margin: .5rem;
 }
 
+.toolbar a {
+  text-decoration: none;
+  color: white;
+  border: 2px white solid;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
 .btn {
   padding: .5rem;
   border-radius: .5rem;
