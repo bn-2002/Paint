@@ -1,9 +1,9 @@
 .toolbar {
   @include flex;
   position: absolute;
-  background-color: rgb(73, 71, 71);
+  background-color: #e9ecef;
+  border-bottom:2px #ced4da solid;
   width: 100%;
-  padding: 0.3rem;
   z-index: 20;
   flex-wrap: wrap;
 
@@ -11,10 +11,10 @@
     @include flex;
     .color-field {
       border-radius: 50%;
-      width: 1.6rem;
-      height: 1.6rem;
+      width: 1.8rem;
+      height: 1.8rem;
       margin: 0 0.2rem;
-      box-shadow: $box-shadow3;
+      border:1px #ced4da solid;
     }
     & > * {
       cursor: pointer;
@@ -32,15 +32,27 @@
     border-radius: 0.2rem;
   }
 
-  & > * {
-    margin: 0.5rem;
-  }
-
   a {
     text-decoration: none;
-    color: white;
-    border: 2px white solid;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius:.1rem;
+
+    img {
+      width:55%;
+      height:55%;
+      display: block;
+      margin:0.1rem auto;
+    }
   }
+
+  .selected {
+    background-color:#ced4da;
+  }
+  &>* {
+    margin:0.2rem;
+  }
+
+  .wrapper {
+    @include flex;
+  }
+
 }

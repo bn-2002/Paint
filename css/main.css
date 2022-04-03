@@ -89,9 +89,9 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  background-color: #494747;
+  background-color: #e9ecef;
+  border-bottom: 2px #ced4da solid;
   width: 100%;
-  padding: 0.3rem;
   z-index: 20;
   flex-wrap: wrap;
 }
@@ -104,10 +104,10 @@ body {
 
 .toolbar .color-fields .color-field {
   border-radius: 50%;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
   margin: 0 0.2rem;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
+  border: 1px #ced4da solid;
 }
 
 .toolbar .color-fields > * {
@@ -125,16 +125,30 @@ body {
   border-radius: 0.2rem;
 }
 
-.toolbar > * {
-  margin: 0.5rem;
-}
-
 .toolbar a {
   text-decoration: none;
-  color: white;
-  border: 2px white solid;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: .1rem;
+}
+
+.toolbar a img {
+  width: 55%;
+  height: 55%;
+  display: block;
+  margin: 0.1rem auto;
+}
+
+.toolbar .selected {
+  background-color: #ced4da;
+}
+
+.toolbar > * {
+  margin: 0.2rem;
+}
+
+.toolbar .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {

@@ -1,36 +1,3 @@
-// let line = new Konva.Line ({
-//     x : 20,
-//     y:50,
-//     stroke : "purple",
-//     points : [0,0,400,0,150,200],
-//     lineCap : "round",
-//     lineJoin : "round",
-//     closed : true,
-//     fill : "pink",
-// })
-
-// let text = new Konva.Text({
-//     x : 700,
-//     y:200,
-//     fill : "blue",
-//     text : "hello world hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldv",
-//     fontSize : 24,
-//     draggable:true,
-//     width : 200,
-// })
-
-// Konva.Image.fromURL("http://poki.jp/g/little-alchemy-2",function(bill) {
-//     console.log('hi');
-//     layer.add(bill);
-//     layer.draw();
-// })
-
-// const myhandler = function() {
-//     console.log('triggred');
-// }
-
-// star.on('click',myhandler);
-
 const undoBtn = document.getElementById("undo");
 const clearBtn = document.getElementById("clear");
 const colorFields = document.querySelectorAll(".color-field");
@@ -46,6 +13,8 @@ const regtangle = document.getElementById("regtangle");
 const triangle = document.getElementById("triangle");
 const star = document.getElementById("star");
 const text = document.getElementById("text");
+const copy = document.getElementById("copy");
+const eraser =  document.getElementById("eraser");
 
 let stage = new Konva.Stage({
   width: 2000,
@@ -61,6 +30,7 @@ let _square = null;
 let _circle = null;
 let _star = null;
 let _lastLine = null;
+let _line = null;
 let isDrawing = false;
 let currentTool = "brush";
 let currentShape = null;
@@ -139,6 +109,17 @@ const mousedownHandler = function () {
     });
     layer.add(_square).batchDraw();
   }
+
+  if (currentTool === "eraser") {
+    _lastLine = new Konva.Line({
+      stroke: '#fff',
+      strokeWidth: strokeWidth,
+      lineCap: "round",
+      points: [pos.x, pos.y, pos.x, pos.y],
+    });
+    layer.add(_lastLine).batchDraw();
+  }
+
 };
 
 const mousemoveHandler = function () {
@@ -147,9 +128,10 @@ const mousemoveHandler = function () {
   const pos = stage.getPointerPosition();
 
   if (currentTool === "brush") {
-    let newPoints = _lastLine.points().concat([pos.x, pos.y]);
+    let newPoints = _lastLine.points().concat([pos.x,pos.y]);
     _lastLine.points(newPoints);
   }
+
 
   if (currentTool === "regtangle") {
     const newWidth = pos.x - _rectangle.x();
@@ -177,6 +159,11 @@ const mousemoveHandler = function () {
     _star.innerRadius(newRadius);
   }
 
+  if (currentTool === "eraser") {
+    let newPoints = _lastLine.points().concat([pos.x,pos.y]);
+    _lastLine.points(newPoints);
+  }
+
   layer.batchDraw();
 };
 
@@ -184,8 +171,15 @@ const mouseupHandler = function () {
   isDrawing = false;
 };
 
-const changeTool = function (selectedTool) {
+const changeTool = function (selectedTool,tool) {
   currentTool = selectedTool;
+  brush.className = "";
+  circle.className = "";
+  square.className = "";
+  regtangle.className = "";
+  eraser.className = "";
+  star.className = "";
+  tool.className = "selected";
 };
 
 const changeLinecolor = function (color) {
@@ -233,34 +227,33 @@ const startup = function () {
   });
 
   brush.addEventListener("click", function () {
-    changeTool("brush");
+    changeTool("brush",this);
   });
 
   regtangle.addEventListener("click", function () {
-    changeTool("regtangle");
+    changeTool("regtangle",this);
   });
 
   circle.addEventListener("click", function () {
-    changeTool("circle");
+    changeTool("circle",this);
   });
 
   star.addEventListener("click", function () {
-    changeTool("star");
+    changeTool("star",this);
   });
 
   square.addEventListener("click", function () {
-    changeTool("square");
+    changeTool("square",this);
   });
 
-  polygon.addEventListener("click", function () {
-    changeTool("polygon");
+  eraser.addEventListener("click", function () {
+    changeTool("eraser",this);
   });
-
 };
 
 window.addEventListener("load", startup, false);
 
 // clear - button -polygon - ellipse - line
-//draggable - copy - earser 
+//draggable - copy 
 //text- image upload - save
 //scss + icons

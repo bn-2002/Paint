@@ -12,8 +12,6 @@
 <body>
     <div class="container">
         <div class="toolbar">
-          <a class="btn" id="undo">undo</a>
-          <a class="btn" id="clear">clear</a>
           <div class="color-fields">
             <div class="color-field" style ="background-color: rgb(243, 24, 24)"></div>
             <div class="color-field" style ="background-color: rgb(241, 102, 241)"></div>
@@ -22,21 +20,32 @@
           </div>
           <input type="color" class="color-picker" />
           <input type="range" min="1" max="100" class="pen-range" />
-          <a id="brush" href="#"">brush</a>
-          <a id="line" href="#"">line</a>
-          <a id="circle" href="#">circle</a>
-          <a id="square" href="#">square</a>
-          <a id="regtangle" href="#">regtangle</a>
-          <a id="star" href="#">star</a>
-          <a id="polygon" href="#">polygon</a>
-          <a id="ellipse" href="#">ellipse</a>
-          <a id="triangle" href="#">triangle</a>
-          <a id="text" href="#">text</a>
-          <a id="earaser">earser</a>
-          <a id="copy">copy</a>
-          <a id="drag">drag</a>
-          <a id="open" class="selected" href="#">image upload</a>
-          <a id="save" href="#">save</a>
+          <div class="wrapper">
+            <a id="brush" class="selected" href="#"">
+              <img src="https://img.icons8.com/ios/50/000000/paint.png"/>            
+            </a>
+            <a id="circle" href="#">
+              <img src="https://img.icons8.com/ios/50/000000/circled.png"/>      
+            </a>
+            <a id="square" href="#">
+              <img src="https://img.icons8.com/ios/50/000000/square-spinner.png"/>
+            </a>
+            <a id="regtangle" href="#">
+              <img src="https://img.icons8.com/fluency-systems-filled/48/000000/rectangle.png"/>
+            </a>
+            <a id="star" href="#">
+              <img src="https://img.icons8.com/ios/50/000000/star--v1.png"/>
+            </a>
+            <a id="eraser" href="#">
+              <img src="https://img.icons8.com/ios-filled/50/000000/erase.png"/>
+            </a>
+            <!-- <a id="text" href="#">text</a>
+            <a class="btn" id="undo">undo</a>
+            <a class="btn" id="clear">clear</a>
+            <a id="copy" href="#">copy</a>
+            <a id="open" class="selected" href="#">image upload</a>
+            <a id="save" href="#">save</a> -->
+          </div>    
         </div>
         <div id="konva-holder"></div>  
     </div>
