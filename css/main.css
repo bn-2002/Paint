@@ -93,6 +93,7 @@ body {
   width: 100%;
   padding: 0.3rem;
   z-index: 20;
+  flex-wrap: wrap;
 }
 
 .toolbar .color-fields {
@@ -113,7 +114,8 @@ body {
   cursor: pointer;
 }
 
-.toolbar .color-picker, .toolbar .range-tool {
+.toolbar .color-picker,
+.toolbar .range-tool {
   cursor: pointer;
 }
 
@@ -124,7 +126,7 @@ body {
 }
 
 .toolbar > * {
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .toolbar a {
@@ -132,7 +134,7 @@ body {
   color: white;
   border: 2px white solid;
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .btn {
