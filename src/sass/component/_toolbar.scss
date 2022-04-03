@@ -1,8 +1,8 @@
 .toolbar {
   @include flex;
   position: absolute;
-  background-color: #e9ecef;
-  border-bottom:2px #ced4da solid;
+  background-color: $primary-color;
+  border-bottom:2px $secondary-color solid;
   width: 100%;
   z-index: 20;
   flex-wrap: wrap;
@@ -14,7 +14,7 @@
       width: 1.8rem;
       height: 1.8rem;
       margin: 0 0.2rem;
-      border:1px #ced4da solid;
+      border:1px $secondary-color solid;
     }
     & > * {
       cursor: pointer;
@@ -45,7 +45,7 @@
   }
 
   .selected {
-    background-color:#ced4da;
+    background-color:$secondary-color;
   }
   &>* {
     margin:0.2rem;

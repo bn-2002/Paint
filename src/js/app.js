@@ -132,7 +132,6 @@ const mousemoveHandler = function () {
     _lastLine.points(newPoints);
   }
 
-
   if (currentTool === "regtangle") {
     const newWidth = pos.x - _rectangle.x();
     const newHeight = pos.y - _rectangle.y();
@@ -253,7 +252,6 @@ const startup = function () {
 
 window.addEventListener("load", startup, false);
 
-// clear - button -polygon - ellipse - line
+// clear -  line
 //draggable - copy 
 //text- image upload - save
-//scss + icons

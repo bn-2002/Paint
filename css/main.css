@@ -168,20 +168,4 @@ body {
   position: relative;
   cursor: pointer;
 }
-
-.menu {
-  background-color: #323434;
-  padding: 1rem;
-}
-
-.menu li {
-  list-style-type: none;
-  display: inline;
-  padding: 1rem;
-}
-
-.menu li a {
-  color: #ffff;
-  text-decoration: none;
-}
 /*# sourceMappingURL=main.css.map */
